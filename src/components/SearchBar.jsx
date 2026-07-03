@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
 
-const SearchBar = () => {
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../redux/searchSlice";
+
+function SearchBar() {
+  const dispatch = useDispatch();
+
+  const searchTerm = useSelector((state) => state.search.searchTerm);
+
   return (
-    <div>SearchBar</div>
-  )
+    <input
+      type="text"
+      placeholder="Search products..."
+      value={searchTerm}
+      onChange={(e) => dispatch(setSearchTerm(e.target.value))}
+    />
+  );
 }
 
-export default SearchBar
+export default SearchBar;

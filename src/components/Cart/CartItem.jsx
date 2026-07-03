@@ -3,7 +3,7 @@ import {
   increaseQuantity,
   decreaseQuantity,
   removeFromCart,
-} from "../../redux/cart/cartSlice";
+} from "../../redux/cartSlice";
 import "./Cart.css";
 
 function CartItem({ item }) {
