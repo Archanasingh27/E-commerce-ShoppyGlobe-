@@ -25,7 +25,7 @@ const ProductItem = ({ product }) => {
         <button>View Details</button>
       </Link>
 
-      <button>Add to Cart</button>
+      <button onClick={handleAddToCart}>Add to Cart</button>
     </div>
   );
 }
