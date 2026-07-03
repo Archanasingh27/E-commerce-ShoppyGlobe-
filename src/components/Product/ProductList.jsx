@@ -1,6 +1,6 @@
 import React from 'react'
-import ProductItem from "../ProductItem/ProductItem";
-import useProducts from "../../hooks/useProducts";
+import ProductItem from "./ProductItem.jsx";
+import useProducts from "../../hooks/useProduct.js";
 import "./ProductList.css";
 
 function ProductList() {
