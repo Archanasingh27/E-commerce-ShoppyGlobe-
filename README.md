@@ -1,16 +1,208 @@
-# React + Vite
+# ShoppyGlobe E-Commerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React-based e-commerce application that allows users to browse products, search products, filter by category, view product details, and manage their shopping cart.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+### Product Listing
+- Fetches products from DummyJSON API
+- Responsive product grid layout
+- Product cards with image, title, price, and actions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Product Search
+- Search products by name
+- Real-time filtering
 
-## Expanding the ESLint configuration
+### Category Filtering
+- Filter products by category
+- Dynamic category generation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Product Details
+- View complete product information
+- Product image
+- Product description
+- Price and rating
+
+### Shopping Cart
+- Add products to cart
+- Remove products from cart
+- Increase and decrease quantity
+- Cart total calculation
+- Empty cart state UI
+
+### Navigation
+- React Router based navigation
+- Home page
+- Product details page
+- Cart page
+- Checkout page
+
+### Responsive Design
+- Mobile-friendly layout
+- Tablet support
+- Desktop optimized UI
+
+---
+
+## Technologies Used
+
+- React
+- Redux Toolkit
+- React Router DOM
+- CSS3
+- JavaScript (ES6+)
+- Vite
+- DummyJSON API
+
+---
+
+## Project Structure
+
+```bash
+src/
+├── api/
+│   ├──api.js
+├── assets/
+│   ├──hero.png
+│
+├── components/
+│   ├── Header/
+│   ├── Footer/
+│   ├── Product/
+│   ├── Cart/
+│   └── CategoryBar/
+│ 
+├── HeroSection/
+├── Layout/
+│ 
+├── pages/
+│   ├── Home.jsx
+│   ├── ProductDetail.jsx
+│   ├── Cart.jsx
+│   └── Checkout.jsx
+│
+├── redux/
+│   ├── store.js
+│   ├── cartSlice.js
+│   └── searchSlice.js
+│
+├── hooks/
+│   └── useProducts.js
+│
+├── App.jsx
+├── index.css
+└── main.jsx
+```
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone (https://github.com/Archanasingh27/E-commerce-ShoppyGlobe-.git)
+```
+
+### Navigate to Project
+
+```bash
+cd E-commerse
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+## API Used
+
+DummyJSON Products API
+
+```bash
+https://dummyjson.com/products
+```
+
+---
+
+## Available Pages
+
+### Home Page
+
+- Hero Section
+- Promotional Banner
+- Category Filter
+- Product Listing
+
+### Product Details Page
+
+Displays:
+
+- Product Image
+- Product Name
+- Description
+- Price
+- Rating
+
+### Cart Page
+
+Displays:
+
+- Cart Items
+- Quantity Controls
+- Order Summary
+- Total Amount
+
+### Checkout Page
+
+Simple checkout confirmation screen.
+
+---
+
+## State Management
+
+Redux Toolkit is used for:
+
+### Cart State
+
+- Add product
+- Remove product
+- Increase quantity
+- Decrease quantity
+
+### Search State
+
+- Search products globally
+
+---
+
+## Future Enhancements
+
+- User Authentication
+- Wishlist Feature
+- Payment Gateway Integration
+- Order History
+- Product Reviews
+- Dark Mode
+
+---
+
+## Author
+
+Archana Singh
+
+## Github Repo
+
+https://github.com/Archanasingh27/E-commerce-ShoppyGlobe-.git
+
