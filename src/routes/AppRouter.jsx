@@ -5,27 +5,55 @@ import ProductDetail from "../pages/ProductDetail";
 import CartPage from "../pages/CartPage";
 import Checkout from "../pages/Checkout";
 import NotFound from "../pages/NotFound";
+import Layout from "../layout/Layout";
+import { Suspense } from "react";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/product/:id",
-    element: <ProductDetail />,
-  },
-  {
-    path: "/cart",
-    element: <CartPage />,
-  },
-  {
-    path: "/checkout",
-    element: <Checkout />,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: (
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: "product/:id",
+        element: (
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <ProductDetail />
+          </Suspense>
+        ),
+      },
+      {
+        path: "cart",
+        element: (
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <CartPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "checkout",
+        element: (
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <Checkout />
+          </Suspense>
+        ),
+      },
+    ],
   },
   {
     path: "*",
-    element: <NotFound />,
+    element: (
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <NotFound />
+      </Suspense>
+    ),
   },
 ]);
 
