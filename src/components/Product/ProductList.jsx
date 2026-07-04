@@ -1,26 +1,22 @@
-import React from 'react'
+import React, { useMemo, useState } from "react";
+import { useSelector } from "react-redux";
 import ProductItem from "./ProductItem.jsx";
 import useProducts from "../../hooks/useProduct.js";
+import CategoryBar from "../CategoryBar/CategoryBar.jsx";
 import "./ProductList.css";
-import { useSelector } from "react-redux";
-import CategoryBar from '../CategoryBar/CategoryBar.jsx';
-import { useState, useMemo } from 'react';
-
 
 function ProductList() {
   const { products, loading, error } = useProducts();
-  
   const [selectedCategory, setSelectedCategory] = useState("all");
-
   const searchTerm = useSelector((state) => state.search.searchTerm);
 
-// get unique categories from product
-  const categories = useMemo(() => {
-    return [...new Set(products.map((p) => p.category))];
-  }, [products]);
+  // Get unique categories from the fetched products.
+  const categories = useMemo(
+    () => [...new Set(products.map((product) => product.category))],
+    [products]
+  );
 
-
-  //filter products
+  // Filter products by search term and selected category.
   const filteredProducts = products.filter((product) => {
     const matchSearch = product.title
       .toLowerCase()
@@ -40,21 +36,16 @@ function ProductList() {
     return <h2 style={{ color: "red", textAlign: "center" }}>{error}</h2>;
   }
 
-    if (filteredProducts.length === 0) {
-      return (
-        <h2
-          style={{
-            textAlign: "center",
-            marginTop: "50px",
-          }}
-        >
-          No products found.
-        </h2>
-      );
-    }
+  if (filteredProducts.length === 0) {
+    return (
+      <h2 style={{ textAlign: "center", marginTop: "50px" }}>
+        No products found.
+      </h2>
+    );
+  }
 
   return (
-    <div id='products'>
+    <div id="products">
       <CategoryBar
         categories={categories}
         selectedCategory={selectedCategory}

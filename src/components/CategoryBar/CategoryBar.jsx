@@ -1,11 +1,11 @@
 import "./CategoryBar.css";
 
 function CategoryBar({ categories, selectedCategory, setSelectedCategory }) {
+  // Render category buttons and highlight the selected category.
   return (
     <section className="category-section">
       <div className="category-title">
         <h2>Our Catalog</h2>
-
         <span>{categories.length} Categories</span>
       </div>
 

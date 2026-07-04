@@ -1,48 +1,12 @@
-/* .cart-item {
-
-    display: flex;
-
-    gap: 20px;
-
-    background: white;
-
-    padding: 20px;
-
-    margin-bottom: 20px;
-
-    border-radius: 10px;
-
-    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
-
-}
-
-.cart-item img {
-
-    width: 120px;
-
-    height: 120px;
-
-    object-fit: cover;
-
-}
-
-.cart-item button {
-
-    padding: 8px 15px;
-
-    cursor: pointer;
-
-} */
-
-
 
  .cart-page {
-  width: 90%;
+  width: 80%;
   margin: 40px auto;
 
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 30px;
+  overflow: hidden;
 }
 
 .cart-left h1 {

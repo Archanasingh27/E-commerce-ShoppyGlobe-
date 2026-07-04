@@ -1,17 +1,13 @@
 .hero {
-    width: 90%;
+    width: 80%;
     margin: 40px auto;
     min-height: 550px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     background: #151515;
     border-radius: 30px;
-
     overflow: hidden;
-
     color: white;
 }
 
@@ -37,29 +33,24 @@
 
 .hero-left p {
     color: #cfcfcf;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.7;
     width: 90%;
 }
 
 .hero-btn {
+    display: inline-block;
     margin-top: 40px;
-
     padding: 16px 38px;
-
     background: white;
     color: black;
-
     border: none;
-
     border-radius: 12px;
-
     font-size: 18px;
-
     font-weight: 600;
-
     cursor: pointer;
-
+    text-decoration: none;
+    /* Remove underline */
     transition: .3s;
 }
 
@@ -67,110 +58,74 @@
     transform: translateY(-4px);
 }
 
+.hero-btn:focus {
+    outline: 3px solid #60a5fa;
+    outline-offset: 2px;
+}
+
 .hero-right {
     flex: 1;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     height: 100%;
-}
-
-.hero-right img {
-
-    width: 100%;
-
-    height: 550px;
-
-    object-fit: cover;
-}
-
-.hero-right {
-  position: relative;
+    position: relative;
 }
 
 .hero-right::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to left,
-    transparent,
-    rgba(21,21,21,0.9)
-  );
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left,
+            transparent,
+            rgba(21, 21, 21, 0.9));
 }
 
 .hero-right img {
-  width: 100%;
-  height: 550px;
-  object-fit: cover;
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
 }
 
 /* Responsive */
-
 @media(max-width:991px) {
-
     .hero {
-
         flex-direction: column;
-
     }
 
     .hero-left {
-
         padding: 40px;
-
         text-align: center;
-
     }
 
     .hero-left h1 {
-
         font-size: 48px;
-
     }
 
     .hero-left p {
-
         width: 100%;
-
     }
 
     .hero-right {
-
         width: 100%;
-
     }
 
     .hero-right img {
-
         height: 350px;
-
     }
-
 }
 
 @media(max-width:576px) {
-
     .hero-left h1 {
-
         font-size: 38px;
-
     }
 
     .hero-left p {
-
         font-size: 17px;
-
     }
 
     .hero-btn {
-
         width: 100%;
-
+        text-align: center;
     }
-
 }

@@ -1,14 +1,16 @@
-import React from 'react'
-import Header from '../components/Header/Header.jsx';
-import ProductList from '../components/Product/ProductList.jsx';
+import React from "react";
+import ProductList from "../components/Product/ProductList.jsx";
+import HeroSection from "../Herosection/Herosection.jsx";
+import Footer from "../components/Footer/Footer.jsx";
 
 const Home = () => {
   return (
     <>
-          <Header />
-        <ProductList />
+      <HeroSection />
+      <ProductList />
+      <Footer />
     </>
   );
-}
+};
 
-export default Home
+export default Home;

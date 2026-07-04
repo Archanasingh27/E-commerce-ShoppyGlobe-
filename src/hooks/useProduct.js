@@ -10,9 +10,7 @@ const useProducts = () => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-
         const response = await api.get("/products");
-
         setProducts(response.data.products);
       } catch (err) {
         setError("Failed to fetch products.");
@@ -24,6 +22,7 @@ const useProducts = () => {
     fetchProducts();
   }, []);
 
+  // Return products and load/error state for product-related components.
   return { products, loading, error };
 };
 

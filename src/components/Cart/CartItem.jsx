@@ -1,12 +1,11 @@
 import { useDispatch } from "react-redux";
 import {
-  increaseQuantity,
   decreaseQuantity,
+  increaseQuantity,
   removeFromCart,
 } from "../../redux/cartSlice";
-import "./Cart.css";
 import { FaTrash } from "react-icons/fa";
-
+import "./Cart.css";
 
 function CartItem({ item }) {
   const dispatch = useDispatch();
@@ -17,21 +16,16 @@ function CartItem({ item }) {
 
       <div className="item-info">
         <h3>{item.title}</h3>
-
         <p>${item.price} each</p>
       </div>
 
       <div className="qty-controls">
         <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
-
         <span>{item.quantity}</span>
-
         <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
       </div>
 
-      <div className="item-total">
-        ${(item.price * item.quantity).toFixed(2)}
-      </div>
+      <div className="item-total">${(item.price * item.quantity).toFixed(2)}</div>
 
       <button
         className="remove-btn"

@@ -11,13 +11,13 @@ const searchSlice = createSlice({
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
     },
-
     clearSearch: (state) => {
       state.searchTerm = "";
     },
   },
 });
 
+// Search state slice for storing the current search input value.
 export const { setSearchTerm, clearSearch } = searchSlice.actions;
 
 export default searchSlice.reducer;

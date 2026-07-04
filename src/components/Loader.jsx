@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const Loader = () => {
+function Loader() {
+  // Simple loading indicator shown while asynchronous content loads.
   return (
-    <div>Loader</div>
-  )
+    <div style={{ textAlign: "center", marginTop: "80px" }}>
+      <h2>Loading...</h2>
+    </div>
+  );
 }
 
-export default Loader
+export default Loader;

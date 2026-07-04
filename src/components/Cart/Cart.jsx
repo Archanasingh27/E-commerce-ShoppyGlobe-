@@ -1,21 +1,18 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { HiOutlineShoppingBag } from "react-icons/hi";
 import CartItem from "./CartItem";
 import "./Cart.css";
-import { HiOutlineShoppingBag } from "react-icons/hi";
 
 function Cart() {
   const cartItems = useSelector((state) => state.cart.cartItems);
 
-  const subtotal = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0,
-  );
-
+  // Calculate pricing details for the cart summary.
+  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const shipping = subtotal > 0 ? 9.99 : 0;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
-  
+
   if (cartItems.length === 0) {
     return (
       <div className="empty-cart">
@@ -24,10 +21,9 @@ function Cart() {
         </div>
 
         <h1>Your Cart is Empty</h1>
-
         <p>
-          You haven't added any items to your shopping bag yet. Explore our
-          curated collections to get started!
+          You haven't added any items to your shopping bag yet. Explore our curated
+          collections to get started!
         </p>
 
         <Link to="/">
@@ -37,15 +33,11 @@ function Cart() {
     );
   }
 
-
   return (
     <div className="cart-page">
       <div className="cart-left">
         <h1>Shopping Cart</h1>
-
-        <p className="cart-count">
-          You have {cartItems.length} item(s) in your cart.
-        </p>
+        <p className="cart-count">You have {cartItems.length} item(s) in your cart.</p>
 
         {cartItems.map((item) => (
           <CartItem key={item.id} item={item} />

@@ -1,8 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import { lazy, Suspense } from "react";
 
 import Layout from "../layout/Layout";
-import { lazy,Suspense } from "react";
 import Loader from "../components/Loader";
 
 const Home = lazy(() => import("../pages/Home"));
@@ -32,24 +31,21 @@ const router = createBrowserRouter([
         path: "checkout",
         element: <Checkout />,
       },
-
       {
         path: "*",
         element: <NotFound />,
       },
-
     ],
   },
-  
 ]);
 
 function AppRouter() {
+  // Use lazy loading for routes and show the loader while pages load.
   return (
     <Suspense fallback={<Loader />}>
       <RouterProvider router={router} />
     </Suspense>
   );
-
 }
 
 export default AppRouter;
