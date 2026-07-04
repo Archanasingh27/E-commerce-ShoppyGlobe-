@@ -9,6 +9,7 @@ const ProductItem = ({ product }) => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
+    alert("Product added to cart!");
   };
 
   return (
@@ -25,7 +26,10 @@ const ProductItem = ({ product }) => {
         <button>View Details</button>
       </Link>
 
-      <button onClick={handleAddToCart}>Add to Cart</button>
+      <button onClick={handleAddToCart}
+      >Add to Cart</button>
+
+
     </div>
   );
 }
