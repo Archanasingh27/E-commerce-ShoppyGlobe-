@@ -5,44 +5,40 @@ import {
   removeFromCart,
 } from "../../redux/cartSlice";
 import "./Cart.css";
+import { FaTrash } from "react-icons/fa";
+
 
 function CartItem({ item }) {
   const dispatch = useDispatch();
 
   return (
     <div className="cart-item">
-      <img src={item.thumbnail} alt={item.title} width="120" />
+      <img src={item.thumbnail} alt={item.title} />
 
-      <div>
+      <div className="item-info">
         <h3>{item.title}</h3>
 
-        <p>${item.price}</p>
-
-        <div>
-          <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
-
-          <span
-            style={{
-              margin: "0 15px",
-            }}
-          >
-            {item.quantity}
-          </span>
-
-          <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
-        </div>
-
-        <button
-          onClick={() => dispatch(removeFromCart(item.id))}
-          style={{
-            marginTop: "10px",
-            background: "red",
-            color: "white",
-          }}
-        >
-          Remove
-        </button>
+        <p>${item.price} each</p>
       </div>
+
+      <div className="qty-controls">
+        <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
+
+        <span>{item.quantity}</span>
+
+        <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
+      </div>
+
+      <div className="item-total">
+        ${(item.price * item.quantity).toFixed(2)}
+      </div>
+
+      <button
+        className="remove-btn"
+        onClick={() => dispatch(removeFromCart(item.id))}
+      >
+        <FaTrash />
+      </button>
     </div>
   );
 }
