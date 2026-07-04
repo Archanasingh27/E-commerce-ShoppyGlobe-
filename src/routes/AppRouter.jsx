@@ -7,6 +7,7 @@ import Checkout from "../pages/Checkout";
 import NotFound from "../pages/NotFound";
 import Layout from "../layout/Layout";
 import { Suspense } from "react";
+import Loader from "../components/Loader";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<h2>Loading...</h2>}>
+          <Suspense fallback={<Loader />}>
             <Home />
           </Suspense>
         ),
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "product/:id",
         element: (
-          <Suspense fallback={<h2>Loading...</h2>}>
+          <Suspense fallback={<Loader />}>
             <ProductDetail />
           </Suspense>
         ),
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: (
-          <Suspense fallback={<h2>Loading...</h2>}>
+          <Suspense fallback={<Loader />}>
             <CartPage />
           </Suspense>
         ),
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: "checkout",
         element: (
-          <Suspense fallback={<h2>Loading...</h2>}>
+          <Suspense fallback={<Loader />}>
             <Checkout />
           </Suspense>
         ),
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: (
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense fallback={<Loader />}>
         <NotFound />
       </Suspense>
     ),
