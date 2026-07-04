@@ -1,13 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Home from "../pages/Home";
-import ProductDetail from "../pages/ProductDetail";
-import CartPage from "../pages/CartPage";
-import Checkout from "../pages/Checkout";
-import NotFound from "../pages/NotFound";
+
 import Layout from "../layout/Layout";
-import { Suspense } from "react";
+import { lazy,Suspense } from "react";
 import Loader from "../components/Loader";
+
+const Home = lazy(() => import("../pages/Home"));
+const ProductDetail = lazy(() => import("../pages/ProductDetail"));
+const CartPage = lazy(() => import("../pages/CartPage"));
+const Checkout = lazy(() => import("../pages/Checkout"));
+const NotFound = lazy(() => import("../pages/NotFound"));
 
 const router = createBrowserRouter([
   {
@@ -16,50 +18,38 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: (
-          <Suspense fallback={<Loader />}>
-            <Home />
-          </Suspense>
-        ),
+        element: <Home />,
       },
       {
         path: "product/:id",
-        element: (
-          <Suspense fallback={<Loader />}>
-            <ProductDetail />
-          </Suspense>
-        ),
+        element: <ProductDetail />,
       },
       {
         path: "cart",
-        element: (
-          <Suspense fallback={<Loader />}>
-            <CartPage />
-          </Suspense>
-        ),
+        element: <CartPage />,
       },
       {
         path: "checkout",
-        element: (
-          <Suspense fallback={<Loader />}>
-            <Checkout />
-          </Suspense>
-        ),
+        element: <Checkout />,
       },
+
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+
     ],
   },
-  {
-    path: "*",
-    element: (
-      <Suspense fallback={<Loader />}>
-        <NotFound />
-      </Suspense>
-    ),
-  },
+  
 ]);
 
 function AppRouter() {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<Loader />}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
+
 }
 
 export default AppRouter;
