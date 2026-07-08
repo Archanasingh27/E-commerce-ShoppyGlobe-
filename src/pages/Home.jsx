@@ -1,6 +1,6 @@
 import React from "react";
 import ProductList from "../components/Product/ProductList.jsx";
-import HeroSection from "../Herosection/Herosection.jsx";
+import HeroSection from "../components/Herosection/Herosection.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 
 const Home = () => {

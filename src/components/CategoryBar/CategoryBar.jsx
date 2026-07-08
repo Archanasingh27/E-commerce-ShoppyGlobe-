@@ -1,7 +1,7 @@
 import "./CategoryBar.css";
 
 function CategoryBar({ categories, selectedCategory, setSelectedCategory }) {
-  // Render category buttons and highlight the selected category.
+  //  category buttons and highlight the selected category.
   return (
     <section className="category-section">
       <div className="category-title">

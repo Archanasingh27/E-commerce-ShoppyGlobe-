@@ -5,13 +5,22 @@
     gap: 40px;
 }
 
+/* Left Side - Checkout Form */
 .checkout-form,
 .order-summary {
     flex: 1;
-    background: white;
+    background: #fff;
     padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Form */
+.checkout-form h2,
+.order-summary h2 {
+    margin-bottom: 20px;
+    color: #1f2937;
+    font-size: 28px;
 }
 
 .checkout-form form {
@@ -22,24 +31,120 @@
 
 .checkout-form input,
 .checkout-form textarea {
-    padding: 12px;
+    width: 100%;
+    padding: 12px 15px;
     font-size: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus {
+    border-color: #1e293b;
+}
+
+.checkout-form textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 .checkout-form button {
-    padding: 12px;
+    padding: 14px;
     background: #1e293b;
-    color: white;
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
+    transition: 0.3s;
 }
 
+.checkout-form button:hover {
+    background: #111827;
+}
 
-@media(max-width:768px) {
+/* ===========================
+   Order Summary
+=========================== */
 
+.order-summary h2 {
+    margin-bottom: 25px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ececec;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 70%;
+}
+
+.item-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+}
+
+.item-qty {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.item-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.order-summary hr {
+    border: none;
+    border-top: 2px dashed #d1d5db;
+    margin: 20px 0;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.summary-total h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #111827;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
     .checkout-container {
         flex-direction: column;
     }
 
+    .checkout-form,
+    .order-summary {
+        width: 100%;
+    }
+
+    .summary-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .item-price {
+        align-self: flex-end;
+    }
 }

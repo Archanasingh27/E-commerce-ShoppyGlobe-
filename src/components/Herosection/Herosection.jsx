@@ -1,5 +1,5 @@
 import "./Herosection.css";
-import heroImg from "../assets/hero.png";
+import heroImg from "../../assets/hero-img-2.jpg";
 
 function Hero() {
   const handleExploreClick = () => {

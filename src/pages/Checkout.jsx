@@ -36,7 +36,7 @@ function Checkout() {
     );
   }
 
-  // Update form data when an input field changes
+  // Update form data 
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -51,7 +51,6 @@ function Checkout() {
 
     dispatch(clearCart());
 
-    // Redirect to home 
     setTimeout(() => {
       navigate("/");
     }, 1500);
@@ -107,15 +106,23 @@ function Checkout() {
 
         {cartItems.map((item) => (
           <div key={item.id} className="summary-item">
-            <span>
-              {item.title} × {item.quantity}
+            <div className="item-info">
+              <span className="item-name">{item.title}</span>
+              <span className="item-qty">Qty: {item.quantity}</span>
+            </div>
+
+            <span className="item-price">
+              ${(item.price * item.quantity).toFixed(2)}
             </span>
-            <span>${(item.price * item.quantity).toFixed(2)}</span>
           </div>
         ))}
 
         <hr />
-        <h3>Total: ${total.toFixed(2)}</h3>
+
+        <div className="summary-total">
+          <h3>Total</h3>
+          <h3>${total.toFixed(2)}</h3>
+        </div>
       </div>
     </div>
   );

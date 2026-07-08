@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <Link to="/">🛍️ ShoppyGlobe</Link>
+        <Link to="/"><span>S</span> ShoppyGlobe</Link>
       </div>
 
       <div className="header-search">
