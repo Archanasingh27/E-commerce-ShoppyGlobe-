@@ -100,8 +100,22 @@ src/
 
 
 ## Installation
+### Option 1:
+1. Download and extract the ZIP file.
+2. Open the project folder in VS Code.
+3. Open the terminal.
+4. Install dependencies:
 
-### Clone Repository
+npm install
+
+5. Start the development server:
+
+npm run dev
+
+----
+
+
+### Option 2: Clone Repository
 
 git clone https://github.com/Archanasingh27/E-commerce-ShoppyGlobe-.git
 
