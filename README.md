@@ -63,18 +63,18 @@ A modern React-based e-commerce application that allows users to browse products
 ```bash
 src/
 ├── api/
-│   ├──api.js
+│   
 ├── assets/
-│   ├──hero.png
+│  
 │
 ├── components/
 │   ├── Header/
+├   ├── HeroSection/
 │   ├── Footer/
 │   ├── Product/
 │   ├── Cart/
 │   └── CategoryBar/
-│ 
-├── HeroSection/
+│
 ├── Layout/
 │ 
 ├── pages/
@@ -91,38 +91,31 @@ src/
 ├── hooks/
 │   └── useProducts.js
 │
+├── redux/
+│     └─ AppRouter.js
+│ 
 ├── App.jsx
 ├── index.css
 └── main.jsx
-```
 
----
 
 ## Installation
 
 ### Clone Repository
 
-```bash
-git clone (https://github.com/Archanasingh27/E-commerce-ShoppyGlobe-.git)
-```
+git clone https://github.com/Archanasingh27/E-commerce-ShoppyGlobe-.git
 
 ### Navigate to Project
 
-```bash
-cd E-commerse
-```
+cd E-commerce-ShoppyGlobe-
 
 ### Install Dependencies
 
-```bash
 npm install
-```
 
 ### Run Development Server
 
-```bash
 npm run dev
-```
 
 ---
 
@@ -141,9 +134,9 @@ https://dummyjson.com/products
 ### Home Page
 
 - Hero Section
-- Promotional Banner
 - Category Filter
 - Product Listing
+- Footer
 
 ### Product Details Page
 
